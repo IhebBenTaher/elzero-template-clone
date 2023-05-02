@@ -1,0 +1,783 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.container{
+    margin: 0 7vw;
+}
+header{
+    background-color: aliceblue;
+    box-shadow: 0 2px 5px gainsboro;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 10vh;
+    padding: 10px 0;
+}
+#lien{
+    font-size: 3.5vh;
+    margin: 0 20px;
+    font-weight: bold;
+    color: #2196f3;
+    text-align: center;
+}
+.items{
+    display: flex;
+    padding: 0;
+    align-items: center;
+    margin: 0 20px;
+    justify-content: space-between;
+}
+.item{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+.items>li:hover{
+    color: #2196f3;
+    cursor: pointer;
+}
+#other:hover>.second{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    width:65vw;
+    padding: 0;
+    height:45vh;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 290%;
+    background-color: aliceblue;
+}
+.other{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 40%;
+    height: 18%;
+}
+.other:hover{
+    background-color: rgb(220, 220, 220,0.25)
+}
+.items>li:hover::before{
+    content: "";
+    position: absolute;
+    border-top: 0.8vh solid #2196f3;
+    bottom: -200%;
+    left:-1%;
+    animation: navigate 0.3s;
+    animation-fill-mode: forwards;
+    height: 12.8vh;
+}
+.second{
+    display: none;
+}
+.first{
+    height:87vh;
+    position: relative;
+}
+.accueil{
+    display: flex;
+    height: 100%;
+}
+.ele1{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+.ele1 h1{
+    font-size: 40px;
+    font-weight: bold;
+    padding-right: 20%;
+}
+.ele1 p{
+    font-size: 22px;
+    padding-right: 20%;
+}
+.ele1 img{
+    width: 90%;
+    animation: move 2s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate ;
+}
+.first::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(220, 220, 220);
+    z-index: -5;
+    transform: skewY(-6deg);
+    transform-origin: 0;
+}
+.section{
+    padding: 5vh 0;
+}
+.dist{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.art{
+    width: 250px;
+    margin: 10px;
+    border-radius: 5%;
+    box-shadow: 0 2px 5px gray;
+    transition: 0.3s;
+}
+.art:hover{
+    transform: translateY(-10px)
+}
+.art img{
+    width: 100%;
+}
+.title{
+    width: fit-content;
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 15px 13px;
+    position: relative;
+}
+.title::before,.title::after{
+    content: "";
+    transition: 0.3s;
+    top:40%;
+    position: absolute;
+    border: 7px solid #2196f3;
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+    color:#2196f3;
+}
+.item>a{
+    color:black;
+}
+.item:hover>a{
+    color:#2196f3;
+}
+.title::before{
+    left:-28px;
+}
+.title::after{
+    right:-28px;
+}
+.title:hover{
+    transition: 0.3s;
+    transition-delay: 0.1s;
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: white;
+}
+.title:hover::before{
+    transform: translateX(28px);
+}
+.title:hover::after{
+    transform: translateX(-28px);
+}
+.art p,.art h3{
+    padding-left: 10px;
+}
+#gallery{
+    background-color: gainsboro;
+}
+.gal{
+    border: 10px solid white;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height:230px;
+    overflow: hidden;
+}
+.gal img{
+    width: 101%;
+    height:101%;
+    transition: 0.3s;
+}
+.gal img:hover{
+    transform: rotate(-10deg) scale(1.15,1.15);
+    opacity: 0.8;
+}
+.fea, .pla{
+    box-shadow: 0 0 10px rgb(0 0 0/0.4);
+    border: 0;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.fea img ,.fea div{
+    width: 100%;
+    height:250px;
+}
+.fea div{
+    position: relative;
+    overflow: hidden;
+}
+.feat{
+    text-decoration: underline;
+}
+.feat1{
+    color: rgb(244 64 54);
+}
+.feat2{
+    color: rgb(0 150 136);
+}
+.feat3{
+    color: rgb(3 169 244);
+}
+.fea div::before{
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    width: 150%;
+    left:-25%;
+    z-index: 7;
+    height: 100px;
+    transform: rotate(-23deg); 
+    transition: 0.3s;
+    background-color: white;
+}
+.fea:hover div::before{
+    transform: rotate(23deg);
+}
+.fea div::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 5;
+    content: "";
+}
+.feai1::after{
+    background-color: rgb(244 64 54 / 60%);
+}
+.feai2::after{
+    background-color: rgb(0 150 136 / 60%);
+}
+.feai3::after{
+    background-color: rgb(3 169 244 / 60%);
+}
+.feah{
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.feah1{
+    border: 3px solid rgb(244 64 54);
+    color: rgb(244 64 54);
+}
+.feah2{
+    border: 3px solid rgb(0 150 136);
+    color: rgb(0 150 136);
+}
+.feah3{
+    border: 3px solid rgb(3 169 244);
+    color: rgb(3 169 244);
+}
+#testimonials{
+    background-color: gainsboro;
+}
+.tes{
+    width: 250px;
+    height: 180px;
+    background-color: white;
+    border-radius: 7px;
+    padding: 0 5px;
+    position: relative;
+    margin: 40px 10px 0;
+}
+.tes img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.tes div{
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 80px;
+    border-radius: 50%;
+    border: 10px solid rgb(220, 220, 220);
+    height: 80px;
+}
+.tes p{
+    font-size: 14px;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 240px;
+    height: 380px;
+    position: relative;
+    background-color: rgb(220, 220, 220,0.5);;
+    padding-right: 0px;
+    border-radius: 7px;
+}
+.team div{
+    position: absolute;
+    top:30px;
+    right: 30px;
+}
+.team div,.team img{
+    width: 240px;
+    height: 240px;
+    border-radius: 7px;
+}
+.team h2{
+    margin-bottom: 0;
+    color: #2196f3;
+}
+.team{
+    margin: 20px;
+}
+.team h2,.team p{
+    padding-left: 30px;
+}
+.team::after{ 
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 7px;
+    z-index: -1;
+    content: "";
+    background-color: rgb(220, 220, 220,0.6);
+    height: 100%;
+    transition: 0.3s;
+    width: 0;
+}
+.team:hover div{
+    filter: grayscale(2);
+}
+.team:hover h2{
+    color: black
+}
+#service{
+    background-color: rgb(220, 220, 220);
+}
+.ser,.sta{
+    display: flex;
+    transition: 0.3s;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    margin: 20px 10px;
+    background-color: white;
+    color: #2196f3;
+}
+.ser img,.sta img, .seri{
+    width: 70px;
+    height: 70px;
+}
+.seri{
+    margin-top: 20px;
+}
+.serp{
+    display: flex;
+    background-color: rgb(220, 220, 220,0.4);
+    width: 100%;
+    justify-content: space-between;
+}
+.serp p{
+    padding: 20px;
+    margin: 0;
+}
+#serpp{
+    color: white;
+    background-color: #2196f3;
+    padding-right: 40px;
+    height: 300%;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+}
+#serpp::after{
+    content: "";
+    position: absolute;
+    left: 83%;
+    top: 0;
+    background-color: rgb(214, 211, 211);
+    width: 35px;
+    transform: skewX(-25deg);
+    height: 100%;
+}
+.ser:hover{
+    transform: translateY(-10px);
+}
+.ser:hover::before{
+    content: "";
+    height: 3px;
+    width: 1px;
+    position: absolute;
+    background-color: #2196f3;
+    animation: serv 0.3s;
+    animation-fill-mode: forwards;
+}
+.team:hover::after{
+    width: 100%;
+}
+.skil{
+    padding-top: 7vh;
+}
+.skis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+.skid{
+    width: 100%;
+    height: 25px;
+    position: relative;
+    background-color: rgb(220, 220, 220,0.6);
+}
+.skii{
+    width: 50%;
+}
+.wori{
+    width: 40%;
+}
+.skii img{
+    width: 100%;
+}
+.skis div::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    background-color: #2196f3;
+}
+#skid1::before{
+    width: 80%;
+}
+#skid2::before{
+    width: 85%;
+}
+#skid3::before{
+    width: 70%;
+}
+#skid4::before{
+    width: 80%;
+}
+#work,#plan{
+    background-color: rgb(220, 220, 220);
+}
+.wors{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.worh{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 15px 25px;
+    margin: 10px 0;
+    overflow: hidden;
+    background-color: rgb(247, 245, 245);
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.worhi{
+    width: 20%;
+    margin-right: 30px;
+}
+.worhi img,.wori img{
+    width: 100%;
+}
+.wors>div:hover::before{
+    content: "";
+    width:1px;
+    height: 1px;
+    left: 50%;
+    background-color: rgba(250, 252, 253, 0.5);
+    position: absolute;
+    animation: worka 0.6s forwards;
+}
+.sta{
+    background-color: rgb(220, 220, 220);
+    height: 200px;
+    justify-content: space-around;
+}
+.sta .seri{
+    margin: 0;
+}
+.sta h3{
+    font-style: italic;
+    margin: 0;
+}
+.sta h1{
+    font-size: 40px;
+    color: black;
+    margin: 0;
+}
+.stat>div>div:hover:after{
+    right: 0;
+    top: 0;
+}
+.stat>div>div:hover:before{
+    left: 0;
+    bottom: 0;
+}
+.stat>div>div:hover:before,.stat>div>div:hover:after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: #2196f3;
+    animation: stati 0.5s linear forwards;
+}
+.pla{
+    background-color: white;
+    position: relative;
+}
+.pla img{
+    width: 70px;
+    height: 70px;
+}
+.pla h1{
+    font-size: 60px;
+    margin: 0;
+    color: #2196f3;
+}
+.pla span{
+    margin-bottom: 20px;
+}
+.plap{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 18px 25px;
+    text-align: left;
+    border-top: 1px solid rgb(220, 220, 220,0.9);
+}
+.plab{
+    padding: 15px;
+    color: #2196f3;
+    border: 3px solid #2196f3;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#plan>div>div>div:hover:after{
+    right: 0;
+    top: 0;
+}
+#plan>div>div>div:hover:before{
+    left: 0;
+    bottom: 0;
+}
+#plan>div>div>div:hover:before,#plan>div>div>div:hover:after{
+    content: "";
+    position: absolute;
+    height: 50%;
+    background-color: rgb(220, 220, 220,0.25);
+    animation: navigate 0.3s linear forwards;
+}
+#form{
+    padding: 0;
+}
+.ford{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #2196f3;
+}
+.ford p,.ford h1{
+    padding: 0 10%;
+    text-align: center;
+}
+.ford img{
+    width: 250px;
+    height: 300px;
+}
+.ford2{
+    background-color: white;
+}
+form{
+    display: flex;
+    width: 70%;
+    height: 60vh;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.input{    
+    border-color: transparent transparent rgb(220, 220, 220,0.8);
+    height: 45px;
+    border-width: 0 0 0.5px
+}
+.ta{
+    height: 70px;
+}
+button{
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: #2d9df8;
+    border-width: 0;
+    transition: 0.4s;
+}
+button:hover{
+    background-color: #008cff;
+}
+@keyframes navigate {
+    0%{width: 0;}
+    100%{width: 100%;}
+}
+@keyframes stati {
+    0%{height: 0;}
+    100%{height: 100%;}
+}
+@keyframes move {
+    0%{transform: translateY(20px);}
+    100%{transform: translateY(-20px);}
+}
+@keyframes serv {
+    100%{transform:scaleX(250)}
+}
+@keyframes worka {
+    100%{transform:scaleX(1150) scaleY(380)}
+}
+@media(max-width:1150px){
+    .wori{
+        display: none;
+    }
+    .wors{
+        width: 100%;
+    }
+}
+@media(max-width:1000px){
+    .skii{
+        display: none;
+    }
+    .skis{
+        width: 92%;
+    }
+    .ele1{
+        width: 100%;
+    }
+    .ele1 h1,.ele1 p{
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
+    #img1{
+        display: none;
+    }
+}
+@media(max-width:680px){
+    .for{
+        flex-wrap: wrap;
+    }
+    .ford{
+        width: 100%;
+    }
+    .worh{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .worhi{
+        margin: 0;
+        width: 70px;
+        height: 70px;
+    }
+    .worp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .worh h2, .worh p{
+        text-align: center;
+        width: fit-content;
+        margin: 7px;
+    }
+    .header{
+        justify-content: space-around;
+    }
+    #lien{
+        margin: 0 0;
+    }
+    .items{
+        margin: 0 0;
+    }
+    .item{
+        padding: 0 10px;
+    }
+}
+@media(max-width:485px){
+    .items>li:hover::before{
+        border-top-width: 0;
+    }
+    #other:hover>.second{
+        top:200%;
+        width: 80vw;
+    }
+    .art{
+        margin: 10px 0;
+    }
+}
+@media(max-width:420px){
+    .item{
+        font-size: 14px;
+    }
+    #other:hover>.second{
+        top:220%;
+    }
+    .team{
+        margin: 20px auto;
+    }
+    .team::after{
+        top:0;
+        right: 0;
+    }
+}
+@media(max-width:370px){
+    #other:hover>.second{
+        top:150%;
+    }
+    .gal{
+        margin: 10px auto;
+    }
+    .tes{
+        margin: 40px auto 0;
+    }
+    .team{
+         margin-right: 10px; 
+    }
+}
+@media(max-width:350px){
+    .spe{
+        margin: 0;
+    }
+    .team div,.team img{
+        width: 75vw;
+        height: 75vw;
+    }
+    .serv{
+        margin: 20px auto;
+    }
+    .servic,.stat{
+        margin: 0 auto;
+    }
+}
